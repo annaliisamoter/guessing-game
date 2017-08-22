@@ -15,4 +15,14 @@ import random
 greeting = raw_input("Hello, what's your name? ")
 
 random_number = random.randint(1,100)
-print random_number
+while True:
+    count = 0
+    get_guess = int(raw_input("Guess a number between 1 and 100: "))
+    if get_guess != random_number:
+        count += 1
+        if get_guess > random_number:
+            print "your guess is too high, try again"
+        else:
+            print "your guess is too low, try again"
+
+
