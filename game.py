@@ -13,3 +13,6 @@ repeat forever:
 # Put your code here
 import random
 greeting = raw_input("Hello, what's your name? ")
+
+random_number = random.randint(1,100)
+print random_number
