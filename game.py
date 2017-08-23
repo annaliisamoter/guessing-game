@@ -67,9 +67,6 @@ def play_game():
                 return count
     print "You lose! Too many tries!"
 
-    # retry = raw_input("Do you want to try again? (Y/N): ")
-    # if retry == "Y":
-    #     ask_to_play()
 
 
 
