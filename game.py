@@ -40,7 +40,7 @@ def play_game():
     random_number = random.randint(1,100)
     print random_number
     count = 0
-    while True:
+    while count <= 5:
         try:
 
             get_guess = int(raw_input("Guess a number between 1 and 100: "))
@@ -59,11 +59,17 @@ def play_game():
                     print "your guess is too high, try again"
                 else:
                     print "your guess is too low, try again"
+
             else:
                 count +=1
                 print "Well done, {}!  You found my number in {} tries!".format(
                     greeting, count)
                 return count
+    print "You lose! Too many tries!"
+
+    # retry = raw_input("Do you want to try again? (Y/N): ")
+    # if retry == "Y":
+    #     ask_to_play()
 
 
 
