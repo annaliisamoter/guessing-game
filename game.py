@@ -14,9 +14,31 @@ repeat forever:
 import random
 greeting = raw_input("Hello, what's your name? ")
 
-def play_game():
+def ask_to_play():
+    score = None
+    play = "Y"
+    while play == "Y":
+        new_score = play_game()
+        if score == None:
+            score = new_score
+        else:
+            if new_score < score:
+                score = new_score
+                print "Congrats {}!  You got a new best score!" .format(greeting)
+            else:
+                print "The current best score is {}.".format(score)
+        play = raw_input("Do you want to play again? Y/N: ")
+        play = play.upper()
 
+
+
+
+
+def play_game():
+    #input: none
+    #output: score
     random_number = random.randint(1,100)
+    print random_number
     count = 0
     while True:
         try:
@@ -38,18 +60,14 @@ def play_game():
                 else:
                     print "your guess is too low, try again"
             else:
+                count +=1
                 print "Well done, {}!  You found my number in {} tries!".format(
                     greeting, count)
-                replay = raw_input("Would you like to play again? Y/N: ")
-                replay = replay.upper()
-                if replay == "Y":
-                    play_game()
-                else:
-                    print "thanks for playing!"
-                    break
+                return count
 
 
-play_game()
+
+ask_to_play()
 
 
 
